@@ -6,7 +6,8 @@
  * @category Noginn
  * @package Noginn_Service
  * @subpackage Bing
- * @author Tom Graham
+ * @copyright Copyright (c) 2009 Tom Graham <me@noginn.com>
+ * @license http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class Noginn_Service_Bing_RelatedSearchResultSet extends Noginn_Service_Bing_ResultSet
 {
