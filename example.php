@@ -12,7 +12,7 @@ $autoloader = Zend_Loader_Autoloader::getInstance();
 $autoloader->registerNamespace('Noginn_');
 
 if (isset($_POST['query']) && trim($_POST['query']) != '') {
-    $bing = new Noginn_Service_Bing('C1851383F294308AC87D74720514432296CBE4C7');
+    $bing = new Noginn_Service_Bing('__YOUR_APP_ID__');
     $searchResult = $bing->search($_POST['query'], array(
         'web' => array(
             'count' => 25,
