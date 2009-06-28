@@ -27,10 +27,10 @@ class SearchController extends Zend_Controller_Action
             );
             
             // Adjust the query to only search the noginn.com domain
-            //$query .= ' site:noginn.com';
+            $query .= ' site:noginn.com';
             
             // Perform the search!
-            $bing = new Noginn_Service_Bing('C1851383F294308AC87D74720514432296CBE4C7');
+            $bing = new Noginn_Service_Bing('__APP_ID__');
             $result = $bing->search($query, $sources, $options);
             
             $webResults = $result->getSource('web');
