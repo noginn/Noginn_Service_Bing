@@ -166,7 +166,7 @@ class Noginn_Service_Bing
         }
         
         if (isset($options['adult'])) {
-            $arguments['Adult'] = $options['adault'];
+            $arguments['Adult'] = $options['adult'];
         }
         
         $searchOptions = array();
