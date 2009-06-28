@@ -11,18 +11,53 @@
  */
 class Noginn_Service_Bing_NewsResult
 {
+    /**
+     * The title
+     *
+     * @var string
+     */
     protected $_title;
     
+    /**
+     * A snippet of the news article
+     *
+     * @var string
+     */
     protected $_snippet;
     
+    /**
+     * The URL
+     *
+     * @var string
+     */
     protected $_url;
     
+    /**
+     * The source
+     *
+     * @var string
+     */
     protected $_source;
     
+    /**
+     * The date published
+     *
+     * @var string
+     */
     protected $_date;
     
+    /**
+     * Whether the news article is breaking news
+     *
+     * @var bool
+     */
     protected $_breakingNews;
     
+    /**
+     * Constructor.
+     *
+     * @param DOMElement $dom 
+     */
     public function __construct(DOMElement $dom)
     {
         $xpath = new DOMXPath($dom->ownerDocument);
@@ -59,23 +94,63 @@ class Noginn_Service_Bing_NewsResult
         }
     }
     
+    /**
+     * Returns the title
+     *
+     * @return string
+     */
     public function getTitle()
     {
         return $this->_title;
     }
     
-    public function getDescription()
+    /**
+     * Returns a snippet of the news article
+     *
+     * @return string
+     */
+    public function getSnippet()
     {
-        return $this->_description;
+        return $this->_snippet;
     }
     
+    /**
+     * Returns the URL
+     *
+     * @return string
+     */
     public function getUrl()
     {
         return $this->_url;
     }
     
+    /**
+     * Returns the source
+     *
+     * @return string
+     */
     public function getSource()
     {
         return $this->_source;
+    }
+    
+    /**
+     * Returns the date published
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->_date;
+    }
+    
+    /**
+     * Returns whether the news article is breaking news
+     *
+     * @return bool
+     */
+    public function getBreakingNews()
+    {
+        return $this->_breakingNews;
     }
 }
