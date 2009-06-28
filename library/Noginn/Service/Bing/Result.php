@@ -61,51 +61,58 @@ class Noginn_Service_Bing_Result
         
         // Process sources that were requested
         if (in_array('image', $sources)) {
+            $this->_sources['image'] = new Noginn_Service_Bing_ImageResultSet();
             $image = $xpath->query('//mms:Image');
             if ($image->length == 1) {
-                $this->_sources['image'] = new Noginn_Service_Bing_ImageResultSet($image->item(0));
+                $this->_sources['image']->init($image->item(0));
             }
         }
         
         if (in_array('mobileweb', $sources)) {
+            $this->_sources['mobileweb'] = new Noginn_Service_Bing_MobileWebResultSet();
             $mobileWeb = $xpath->query('//mw:MobileWeb');
             if ($mobileWeb->length == 1) {
-                $this->_sources['mobileweb'] = new Noginn_Service_Bing_MobileWebResultSet($mobileWeb->item(0));
+                $this->_sources['mobileweb']->init($mobileWeb->item(0));
             }
         }
         
         if (in_array('news', $sources)) {
+            $this->_sources['news'] = new Noginn_Service_Bing_NewsResultSet();
             $news = $xpath->query('//news:News');
             if ($news->length == 1) {
-                $this->_sources['news'] = new Noginn_Service_Bing_NewsResultSet($news->item(0));
+                $this->_sources['news']->init($news->item(0));
             }
         }
         
         if (in_array('relatedsearch', $sources)) {
+            $this->_sources['relatedsearch'] = new Noginn_Service_Bing_RelatedSearchResultSet();
             $relatedSearch = $xpath->query('//rs:RelatedSearch');
             if ($relatedSearch->length == 1) {
-                $this->_sources['relatedsearch'] = new Noginn_Service_Bing_RelatedSearchResultSet($relatedSearch->item(0));
+                $this->_sources['relatedsearch']->init($relatedSearch->item(0));
             }
         }
         
         if (in_array('spell', $sources)) {
+            $this->_sources['spell'] = new Noginn_Service_Bing_SpellResultSet();
             $spell = $xpath->query('//spl:Spell');
             if ($spell->length == 1) {
-                $this->_sources['spell'] = new Noginn_Service_Bing_SpellResultSet($spell->item(0));
+                $this->_sources['spell']->init($spell->item(0));
             }
         }
         
         if (in_array('web', $sources)) {
+            $this->_sources['web'] = new Noginn_Service_Bing_WebResultSet();
             $web = $xpath->query('//web:Web');
             if ($web->length == 1) {
-                $this->_sources['web'] = new Noginn_Service_Bing_WebResultSet($web->item(0));
+                $this->_sources['web']->init($web->item(0));
             }
         }
         
         if (in_array('video', $sources)) {
+            $this->_sources['video'] = new Noginn_Service_Bing_VideoResultSet();
             $video = $xpath->query('//mms:Video');
             if ($video->length == 1) {
-                $this->_sources['video'] = new Noginn_Service_Bing_VideoResultSet($video->item(0));
+                $this->_sources['video']->init($video->item(0));
             }
         }
     }

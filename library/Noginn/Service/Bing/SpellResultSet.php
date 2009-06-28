@@ -23,7 +23,20 @@ class Noginn_Service_Bing_SpellResultSet extends Noginn_Service_Bing_ResultSet
      *
      * @param DOMElement $dom 
      */
-    public function __construct(DOMElement $dom)
+    public function __construct($dom = null)
+    {
+        if ($dom !== null) {
+            $this->init($dom);
+        }
+    }
+    
+    /**
+     * Initialize the result set
+     *
+     * @param DOMElement $dom 
+     * @return void
+     */
+    public function init(DOMElement $dom)
     {
         $xpath = new DOMXPath($dom->ownerDocument);
         $xpath->registerNamespace('spl', Noginn_Service_Bing::API_NAMESPACE_SPELL);

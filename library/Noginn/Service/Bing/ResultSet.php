@@ -32,6 +32,9 @@ abstract class Noginn_Service_Bing_ResultSet implements SeekableIterator, Counta
      */
     public function count()
     {
+        if ($this->_results === null) {
+            return 0;
+        }
         return $this->_results->length;
     }
     
@@ -88,7 +91,7 @@ abstract class Noginn_Service_Bing_ResultSet implements SeekableIterator, Counta
     public function seek($index)
     {
         $index = (int) $index;
-        if ($index >= 0 && $index < $this->_results->length) {
+        if ($index >= 0 && $index < $this->count()) {
             $this->_currentIndex = $index;
         } else {
             throw new OutOfBoundsException("Illegal index '$index'");
@@ -102,6 +105,6 @@ abstract class Noginn_Service_Bing_ResultSet implements SeekableIterator, Counta
      */
     public function valid()
     {
-        return null !== $this->_results && $this->_currentIndex < $this->_results->length;
+        return $this->_currentIndex < $this->count();
     }
 }
