@@ -7,8 +7,12 @@ Noginn_Service_Bing is a Zend Framework component that wraps the Bing search API
     $bing = new Noginn_Service_Bing('APPID');
     $result = $bing->search('query string', 
         array(
-            'count' => 10,
-            'offset' => 0
+            'image' => array(
+                'count' => 10
+            ),
+            'web' => array(
+                'count' => 10
+            ),
         ),
         array(
             'adult' => 'Strict'
