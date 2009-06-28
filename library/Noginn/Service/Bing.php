@@ -517,7 +517,19 @@ class Noginn_Service_Bing
     }
     
     /**
-     * Returns the REST client used to perform API requests.
+     * Set the HTTP client used to perform API requests.
+     *
+     * @param Zend_Http_Client $httpClient 
+     * @return void
+     * @author Tom Graham
+     */
+    public function setHttpClient(Zend_Http_Client $httpClient)
+    {
+        $this->_httpClient;
+    }
+    
+    /**
+     * Returns the HTTP client used to perform API requests.
      *
      * @return Zend_Rest_Client
      */
