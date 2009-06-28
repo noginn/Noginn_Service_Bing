@@ -1,0 +1,27 @@
+body {
+    font-size: 12px;
+    font-family: helvetica,arial,sans-serif;
+}
+
+#web-results li {
+    margin-bottom: 1em;
+}
+
+#web-results h3 {
+    font-size: 14px;
+    margin: 0.5em 0;
+}
+    #web-results h3 a {
+        color: #005DC4;
+    }
+
+#web-results p {
+    font-size: 12px;
+    margin: 0.5em 0;
+}
+    #web-results p.description {
+        color: #111;
+    }
+    #web-results p.display-url {
+        color: #3B813A;
+    }

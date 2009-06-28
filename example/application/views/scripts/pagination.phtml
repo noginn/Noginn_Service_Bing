@@ -1,0 +1,21 @@
+<?php if ($this->pageCount): ?>
+<ul class="pagination">
+    <?php if (isset($this->previous)): ?>
+    <li><a href="<?php echo $this->url() . '?q=' . urlencode($this->query) . '&amp;p=' . $this->previous; ?>">Previous</a></li>
+    <?php else: ?>
+    <li><span class="disabled">Previous</span></li>
+    <?php endif; ?>
+    <?php foreach ($this->pagesInRange as $page): ?>
+    <?php if ($page != $this->current): ?>
+    <li><a href="<?php echo $this->url() . '?q=' . urlencode($this->query) . '&amp;p=' . $page; ?>"><?php echo $page; ?></a></li>
+    <?php else: ?>
+    <li><?php echo $page; ?></li>
+    <?php endif; ?>
+    <?php endforeach; ?>
+    <?php if (isset($this->next)): ?>
+    <li><a href="<?php echo $this->url() . '?q=' . urlencode($this->query) . '&amp;p=' . $this->next; ?>">Next</a></li>
+    <?php else: ?>
+    <li><span class="disabled">Next</span></li>
+    <?php endif; ?>
+</ul>
+<?php endif; ?>
