@@ -145,6 +145,78 @@ class Noginn_Service_Bing
         
         return new Noginn_Service_Bing_Result($dom, $selectedSources);
     }
+
+    /**
+     * Proxy method for search, where only the "Ad" source type is required
+     *
+     * @param string $query 
+     * @param array $options 
+     * @return Noginn_Service_Bing_Result
+     */
+    public function adSearch($query, array $options = array())
+    {
+        return $this->search($query, array('ad' => $options));
+    }
+    
+    /**
+     * Proxy method for search, where only the "Image" source type is required
+     *
+     * @param string $query 
+     * @param array $options 
+     * @return Noginn_Service_Bing_Result
+     */
+    public function imageSearch($query, array $options = array())
+    {
+        return $this->search($query, array('image' => $options));
+    }
+    
+    /**
+     * Proxy method for search, where only the "MobileWeb" source type is required
+     *
+     * @param string $query 
+     * @param array $options 
+     * @return Noginn_Service_Bing_Result
+     */
+    public function mobileWebSearch($query, array $options = array())
+    {
+        return $this->search($query, array('mobileweb' => $options));
+    }
+    
+    /**
+     * Proxy method for search, where only the "News" source type is required
+     *
+     * @param string $query 
+     * @param array $options 
+     * @return Noginn_Service_Bing_Result
+     */
+    public function newsSearch($query, array $options = array())
+    {
+        return $this->search($query, array('news' => $options));
+    }
+    
+    /**
+     * Proxy method for search, where only the "Web" source type is required
+     *
+     * @param string $query 
+     * @param array $options 
+     * @return Noginn_Service_Bing_Result
+     */
+    public function webSearch($query, array $options = array())
+    {
+        return $this->search($query, array('web' => $options));
+    }
+    
+    /**
+     * Proxy method for search, where only the "video" source type is required
+     *
+     * @param string $query 
+     * @param array $options 
+     * @return Noginn_Service_Bing_Result
+     */
+    public function videoSearch($query, array $options = array())
+    {
+        return $this->search($query, array('video' => $options));
+    }
     
     /**
      * Prepares the common arguments for the given query string and options.
